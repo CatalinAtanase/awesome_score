@@ -7,11 +7,13 @@ class RoundIconButton extends StatelessWidget {
     required this.backgrounColor,
     required this.icon,
     required this.onPressed,
+    this.color = Colors.white,
   });
 
   final Color backgrounColor;
   final Icon icon;
   final void Function() onPressed;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,9 @@ class RoundIconButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: Spacing.xxs, vertical: Spacing.xxs),
         constraints: const BoxConstraints(),
         onPressed: onPressed,
-        iconSize: Spacing.l,
+        iconSize: Spacing.xxl,
         icon: icon,
+        color: color,
       ),
     );
   }

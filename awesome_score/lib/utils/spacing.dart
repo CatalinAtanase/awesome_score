@@ -7,4 +7,5 @@ class Spacing {
   static const double xl = 24.0;
   static const double xxl = 28.0;
   static const double xxxl = 32.0;
+  static const double pagePadding = 16.0;
 }

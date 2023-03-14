@@ -12,18 +12,15 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(Spacing.m),
-      child: Obx(
-        () => ListView.separated(
-          itemCount: _playerController.players.length,
-          itemBuilder: (_, index) {
-            return PlayerListItem(player: _playerController.players[index]);
-          },
-          separatorBuilder: (context, index) {
-            return const Divider();
-          },
-        ),
+    return Obx(
+      () => ListView.separated(
+        itemCount: _playerController.players.length,
+        itemBuilder: (_, index) {
+          return PlayerListItem(player: _playerController.players[index]);
+        },
+        separatorBuilder: (context, index) {
+          return const Divider();
+        },
       ),
     );
   }

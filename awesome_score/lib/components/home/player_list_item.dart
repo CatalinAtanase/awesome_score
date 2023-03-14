@@ -1,3 +1,4 @@
+import 'package:awesome_score/components/home/player_bottom_sheet.dart';
 import 'package:awesome_score/components/home/player_score.dart';
 import 'package:awesome_score/utils/spacing.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +49,16 @@ class PlayerListItem extends StatelessWidget {
         trailing: PlayerScore(
           player: player,
         ),
-        onTap: () {},
+        onTap: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (ctx) {
+              return Obx(
+                () => PlayerBottomSheet(player: playerController.players.firstWhere((element) => element == player)),
+              );
+            },
+          );
+        },
         horizontalTitleGap: Spacing.xs,
         contentPadding: const EdgeInsets.symmetric(horizontal: Spacing.xxs),
       ),

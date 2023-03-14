@@ -1,33 +1,33 @@
-import 'package:awesome_score/components/common/custom_app_bar.dart';
-import 'package:awesome_score/components/home/body.dart';
-import 'package:awesome_score/components/home/dialog_add_player_content.dart';
-import 'package:awesome_score/utils/spacing.dart';
+import 'package:awesome_score/components/settings/values/body.dart';
+import 'package:awesome_score/components/settings/values/value_dialog_body.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../components/common/bottom_app_bar.dart';
+import '../../components/common/bottom_app_bar.dart';
+import '../../components/common/custom_app_bar.dart';
+import '../../utils/spacing.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ValuesScreen extends StatelessWidget {
+  const ValuesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Home'),
+      appBar: const CustomAppBar(title: 'Values'),
       body: Container(
         margin: const EdgeInsets.only(top: Spacing.m),
         child: Padding(
           padding: const EdgeInsets.all(Spacing.pagePadding),
-          child: HomeBody(),
+          child: ValuesBody(),
         ),
       ),
       bottomNavigationBar: const CustomBottomAppBar(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Get.defaultDialog(
-            title: 'Add player',
+            title: 'Add value',
             titlePadding: const EdgeInsets.only(top: Spacing.l),
-            content: const PlayerDialogBody(),
+            content: const ValueDialogBody(),
           );
         },
         tooltip: 'Add player',
